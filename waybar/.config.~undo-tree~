@@ -1,5 +1,0 @@
-(undo-tree-save-format-version . 1)
-"d62e07cbfe0bb458624633ae3af53df1fed1bc40"
-[nil nil nil nil (26141 61605 388177 70000) 0 nil]
-([nil current ((#(" {icon}" 0 7 (fontified t face font-lock-string-face)) . 612) (undo-tree-id0 . -6) (undo-tree-id1 . -6) (undo-tree-id2 . -6) (undo-tree-id3 . -6) (undo-tree-id4 . 1) (undo-tree-id5 . -7) (undo-tree-id6 . 6) (undo-tree-id7 . -2) (undo-tree-id8 . -6) 618 (t 26140 42624 41646 14000)) nil (26141 61605 388174 791000) 0 nil])
-nil

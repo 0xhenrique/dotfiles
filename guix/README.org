@@ -1,0 +1,111 @@
+#+TITLE: GNU Guix Config
+#+AUTHOR: 0xhenrique
+#+DATE: 2025
+
+* Overview
+
+My personal GNU Guix system configuration for a desktop machine with some server capabilities.
+Built around EXWM (Emacs X Window Manager).
+
+** System Overview
+
+- *Minimal desktop*: EXWM for window management
+- *Non-free software*: Using nonguix channel for graphics drivers
+
+* Architecture
+
+** Directory Structure
+#+BEGIN_EXAMPLE
+~/.config/guix/
+├── system.scm       # Main system configuration
+├── channels.scm     # Channel definitions (includes nonguix!)
+├── packages.scm     # Package collections by category
+├── services.scm     # Service configurations
+└── filesystems.scm  # Filesystem declarations
+#+END_EXAMPLE
+
+* Installation and Usage - WIP
+
+Note: the first run will take a VERY LONG TIME as it builds everything from scratch.
+
+** Post-Installation Setup
+
+*** PostgreSQL Initialization
+Creating a user for postgres:
+#+BEGIN_SRC shell
+  sudo -u postgres createdb <user>
+  sudo -u postgres psql
+  # In psql:
+  CREATE USER <user> WITH PASSWORD <password>;
+  GRANT ALL PRIVILEGES ON DATABASE <user> TO <user>;
+#+END_SRC
+
+*** File Shares
+Drives are mounted like this:
+- =/public/hdd1= - sirius
+- =/public/hdd2= - rigel
+
+Accessing from other machines: =\\wired\hdd1= or =\\wired\hdd2=
+
+* Network Services Usage
+
+- Samba shares: =\\wired\hdd1= and =\\wired\hdd2=
+- PostgreSQL: =localhost:5432=
+- SSH access: Port 22
+
+* Hardware Considerations
+
+This configuration uses the non-free Linux kernel and firmware because my graphics card doesn't have free drivers available.
+
+* Maintenance
+
+** System Updates
+#+BEGIN_SRC shell
+  guix pull && sudo -E guix system reconfigure ~/.config/guix/system.scm
+#+END_SRC
+
+** Garbage Collection
+#+BEGIN_SRC shell
+  sudo guix gc --delete-older-than=1m  # Remove builds older than 1 month
+#+END_SRC
+
+** Store Verification
+In case of corrupted derivations:
+#+BEGIN_SRC shell
+  sudo guix gc --verify=repair
+#+END_SRC
+
+* Troubleshooting
+These are problems that I faced at least once in the past.
+
+** Services Failing
+Check service status:
+#+BEGIN_SRC shell
+  sudo herd status
+  sudo herd status postgresql  # Check specific service
+  sudo herd status smbd
+#+END_SRC
+
+** PostgreSQL Connection Issues
+Ensure PostgreSQL is running and check logs:
+#+BEGIN_SRC shell
+  sudo herd status postgresql
+  sudo journalctl -u postgresql
+#+END_SRC
+
+** Storage Drives Not Mounting
+Check if drives are detected:
+#+BEGIN_SRC shell
+  lsblk
+  sudo blkid
+#+END_SRC
+
+Check filesystem integrity:
+#+BEGIN_SRC shell
+  sudo fsck /dev/sdX
+#+END_SRC
+
+* Contributing
+
+This is a personal configuration, but feel free to use as inspiration.
+The flat module structure makes it easy to adapt individual components.
