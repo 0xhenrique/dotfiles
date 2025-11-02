@@ -26,7 +26,7 @@
     (type "ext4")
     (flags '(no-atime))
     (needed-for-boot? #f)
-    (skip-check-if-unavailable? #t)
+    (skip-check-if-clean? #t)
     (create-mount-point? #t))
    
    ;; rigel - secondary storage
@@ -36,7 +36,7 @@
     (type "ext4")
     (flags '(no-atime))
     (needed-for-boot? #f)
-    (skip-check-if-unavailable? #t)
+    (skip-check-if-clean? #t)
     (create-mount-point? #t))
    
    %base-file-systems))

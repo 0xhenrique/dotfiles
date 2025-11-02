@@ -6,7 +6,7 @@
 ;;  \____|  \___/  |___| /_/\_\ ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(add-to-load-path (dirname (current-filename)))
+(add-to-load-path "/home/arisu/.config/guix")
 
 (use-modules (gnu)
              (gnu packages)

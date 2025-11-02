@@ -1,4 +1,7 @@
 (define-module (packages)
+  #:use-module (guix)
+  #:use-module (guix packages)
+  #:use-module (guix profiles)
   #:use-module (gnu packages)
   #:export (arisu-desktop-packages
             arisu-development-packages
@@ -22,7 +25,7 @@
         (specification->package "postgresql")
         (specification->package "ripgrep")
         (specification->package "fd")
-        (specification->package "nss-certs")
+        (specification->package "nss-certs")))
 
 ;;; Server and system tools
 (define arisu-server-packages
