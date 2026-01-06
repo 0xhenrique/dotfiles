@@ -39,7 +39,7 @@
 
     xkb.layout = "us, br";
     xkb.variant = "";
-    xkb.options = "grp:alt_shift_toggle";
+    xkb.options = "grp:win_space_toggle";
 
     desktopManager.xterm.enable = false;
 
@@ -47,6 +47,8 @@
       enable = true;
     };
   };
+
+  services.udisks2.enable = true;
 
   services.displayManager.gdm.enable = true;
   services.displayManager.defaultSession = "none+exwm";
@@ -74,9 +76,10 @@
   };
 
   environment.systemPackages = with pkgs; [
-    vim git wget curl htop neofetch librewolf kitty emacs fzf ripgrep
-    unzip zip fd flameshot yt-dlp deluge mpv btop gimp nicotine-plus
-    rhythmbox feh xdg-desktop-portal-gtk picom guix aporetic
+    vim git wget curl htop neofetch librewolf kitty emacs flameshot
+	fzf ripgrep direnv xfce.thunar nodejs_24 nvitop guix aporetic picom
+    unzip zip fd flameshot yt-dlp deluge mpv btop gimp nicotine-plus feh
+    rhythmbox xdg-desktop-portal-gtk
   ];
 
   fonts.packages = with pkgs; [
@@ -87,3 +90,4 @@
 
   system.stateVersion = "25.11";
 }
+
