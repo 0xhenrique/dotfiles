@@ -23,6 +23,11 @@
     LC_TIME           = "pt_PT.UTF-8";
   };
 
+  fileSystems."/data" = {
+    device = "/dev/disk/by-label/DATA";
+    fsType = "ext4";
+  };
+
   # FUCK YOU NVIDIA!
   nixpkgs.config.allowUnfree = true;
   hardware.graphics.enable = true;
@@ -83,7 +88,7 @@
     fzf ripgrep direnv xfce.thunar nodejs_24 nvitop guix aporetic picom
     unzip zip fd flameshot yt-dlp deluge mpv btop gimp nicotine-plus feh
     rhythmbox xdg-desktop-portal-gtk ffmpeg krita opentabletdriver gcc clang
-    pkg-config gnumake cmake clan-tools
+    pkg-config gnumake cmake clang-tools parted
   ];
 
   fonts.packages = with pkgs; [
@@ -94,3 +99,4 @@
 
   system.stateVersion = "25.11";
 }
+
