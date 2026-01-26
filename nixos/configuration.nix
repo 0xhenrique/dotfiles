@@ -42,16 +42,19 @@
     xkb.options = "grp:win_space_toggle";
 
     desktopManager.xterm.enable = false;
+    windowManager.exwm.enable = false;
 
-    windowManager.exwm = {
+	desktopManager.xfce = {
       enable = true;
+      noDesktop = false;
+      enableXfwm = true;
     };
   };
 
   services.udisks2.enable = true;
 
   services.displayManager.gdm.enable = true;
-  services.displayManager.defaultSession = "none+exwm";
+  services.displayManager.defaultSession = "xfce";
 
   services.dbus.enable = true;
 
@@ -77,9 +80,10 @@
 
   environment.systemPackages = with pkgs; [
     vim git wget curl htop neofetch librewolf kitty emacs flameshot
-	fzf ripgrep direnv xfce.thunar nodejs_24 nvitop guix aporetic picom
+    fzf ripgrep direnv xfce.thunar nodejs_24 nvitop guix aporetic picom
     unzip zip fd flameshot yt-dlp deluge mpv btop gimp nicotine-plus feh
-    rhythmbox xdg-desktop-portal-gtk
+    rhythmbox xdg-desktop-portal-gtk ffmpeg krita opentabletdriver gcc clang
+    pkg-config gnumake cmake clan-tools
   ];
 
   fonts.packages = with pkgs; [
@@ -90,4 +94,3 @@
 
   system.stateVersion = "25.11";
 }
-
