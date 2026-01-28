@@ -27,6 +27,13 @@
   fileSystems."/data" = {
     device = "/dev/disk/by-label/DATA";
     fsType = "ext4";
+    options = ["nofail" "x-systemd.device-timeout=10s"];
+  };
+
+  fileSystems."/rigel" = {
+    device = "/dev/disk/by-label/rigel";
+    fsType = "ext4";
+    options = ["nofail" "x-systemd.device-timeout=10s"];
   };
 
   # FUCK YOU NVIDIA!
