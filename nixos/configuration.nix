@@ -2,6 +2,7 @@
 
 {
   imports = [ ./hardware-configuration.nix ];
+  environment.pathsToLink = [ "/libexec" ];
 
   boot.loader.grub.enable = true;
   boot.loader.grub.device = "/dev/nvme0n1";
@@ -49,18 +50,19 @@
     desktopManager.xterm.enable = false;
     windowManager.exwm.enable = false;
 
-	desktopManager.xfce = {
+    windowManager.i3 = {
       enable = true;
-      noDesktop = false;
-      enableXfwm = true;
+      extraPackages = with pkgs; [
+        dmenu
+        i3status
+        i3blocks
+     ];
     };
   };
 
   services.udisks2.enable = true;
-
   services.displayManager.gdm.enable = true;
-  services.displayManager.defaultSession = "xfce";
-
+  services.displayManager.defaultSession = "none+i3";
   services.dbus.enable = true;
 
   xdg.portal = {
@@ -88,7 +90,7 @@
     fzf ripgrep direnv xfce.thunar nodejs_24 nvitop guix aporetic picom
     unzip zip fd flameshot yt-dlp deluge mpv btop gimp nicotine-plus feh
     rhythmbox xdg-desktop-portal-gtk ffmpeg krita opentabletdriver gcc clang
-    pkg-config gnumake cmake clang-tools parted
+    pkg-config gnumake cmake clang-tools parted lxappearance hydralauncher heroic
   ];
 
   fonts.packages = with pkgs; [
@@ -97,6 +99,12 @@
     iosevka-comfy.comfy
   ];
 
+  programs.steam = {
+    enable = true;
+  };
+
+  programs.i3lock.enable = true;
+  programs.dconf.enable = true;
+
   system.stateVersion = "25.11";
 }
-
