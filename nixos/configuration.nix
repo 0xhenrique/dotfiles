@@ -24,10 +24,10 @@
     LC_TIME           = "pt_PT.UTF-8";
   };
 
-  fileSystems."/data" = {
-    device = "/dev/disk/by-label/DATA";
-    fsType = "ext4";
-    options = ["nofail" "x-systemd.device-timeout=10s"];
+  fileSystems."/sirius" = {
+    device = "/dev/disk/by-uuid/FE6E7F996E7F4A03";
+    fsType = "ntfs";
+    options = ["nofail" "x-systemd.device-timeout=10s" "uid=1000" "gid=100" "dmask=022" "fmask=133"];
   };
 
   fileSystems."/rigel" = {
@@ -54,22 +54,16 @@
     xkb.variant = "";
     xkb.options = "grp:win_space_toggle";
 
-    desktopManager.xterm.enable = false;
-    windowManager.exwm.enable = false;
+    displayManager.lightdm.enable = true;
 
-    windowManager.i3 = {
-      enable = true;
-      extraPackages = with pkgs; [
-        dmenu
-        i3status
-        i3blocks
-     ];
+    desktopManager = {
+      xterm.enable = true;
+      xfce.enable = true;
     };
   };
 
   services.udisks2.enable = true;
-  services.displayManager.gdm.enable = true;
-  services.displayManager.defaultSession = "none+i3";
+  services.displayManager.defaultSession = "xfce";
   services.dbus.enable = true;
 
   xdg.portal = {
@@ -93,18 +87,17 @@
   };
 
   environment.systemPackages = with pkgs; [
-    vim git wget curl htop neofetch librewolf kitty emacs flameshot
-    fzf ripgrep direnv xfce.thunar nodejs_24 nvitop guix aporetic picom
-    unzip zip fd flameshot yt-dlp deluge mpv btop gimp nicotine-plus feh
+    git wget curl htop btop neofetch librewolf emacs flameshot
+    ripgrep direnv xfce.thunar nvitop aporetic picom
+    unzip zip fd flameshot yt-dlp deluge mpv gimp nicotine-plus feh
     rhythmbox xdg-desktop-portal-gtk ffmpeg krita opentabletdriver gcc clang
-    pkg-config gnumake cmake clang-tools parted lxappearance hydralauncher heroic
+    pkg-config gnumake cmake clang-tools lxappearance claude-code
   ];
 
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-cjk-serif
-    iosevka-comfy.comfy
-  ];
+   ];
 
   programs.steam = {
     enable = true;
