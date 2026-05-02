@@ -1,0 +1,28 @@
+{
+  FTitleBack = (solid, "#0088CC");
+  FTitleColor = white;
+  UTitleBack = (solid, "#333333");
+  UTitleColor = "#999999";
+  PTitleBack = (solid, "#333333");
+  PTitleColor = "#999999";
+  MenuTextBack = (solid, "#ECF2F5");
+  MenuTextColor = black;
+  IconTitleBack = "#333333";
+  IconTitleColor = white;
+  MenuTitleBack = (solid, "#0088CC");
+  MenuTitleColor = white;
+  HighlightTextColor = white;
+  HighlightColor = "#333333";
+  MenuDisabledColor = "#999999";
+  ClipTitleColor = black;
+  IconBack = (solid, "#ECF2F5");
+  ResizebarBack = (solid, "#333333");
+  MenuStyle = flat;
+  WorkspaceBack = (solid, black);
+  ClipTitleFont = "Arial:slant=0:weight=200:width=100:pixelsize=10";
+  IconTitleFont = "Arial:slant=0:weight=80:width=100:pixelsize=9";
+  LargeDisplayFont = "Arial:slant=0:weight=80:width=100:pixelsize=24";
+  MenuTextFont = "Arial:slant=0:weight=80:width=100:pixelsize=12";
+  MenuTitleFont = "Arial:slant=0:weight=200:width=100:pixelsize=12";
+  WindowTitleFont = "Arial:slant=0:weight=200:width=100:pixelsize=12";
+}
