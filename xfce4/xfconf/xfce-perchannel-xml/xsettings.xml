@@ -14,11 +14,11 @@
     <property name="EnableInputFeedbackSounds" type="empty"/>
   </property>
   <property name="Xft" type="empty">
-    <property name="DPI" type="empty"/>
+    <property name="DPI" type="int" value="-1"/>
     <property name="Antialias" type="empty"/>
-    <property name="Hinting" type="empty"/>
-    <property name="HintStyle" type="empty"/>
-    <property name="RGBA" type="empty"/>
+    <property name="Hinting" type="int" value="0"/>
+    <property name="HintStyle" type="string" value="hintnone"/>
+    <property name="RGBA" type="string" value="none"/>
   </property>
   <property name="Gtk" type="empty">
     <property name="CanChangeAccels" type="empty"/>
@@ -41,5 +41,6 @@
   </property>
   <property name="Xfce" type="empty">
     <property name="SyncThemes" type="bool" value="false"/>
+    <property name="LastCustomDPI" type="int" value="96"/>
   </property>
 </channel>

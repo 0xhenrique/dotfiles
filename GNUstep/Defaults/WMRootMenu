@@ -141,6 +141,11 @@
       "setstyle $HOME/GNUstep/Library/WindowMaker/Styles/Amoled.style"
     ),
     (
+      "Apply Pache",
+      EXEC,
+      "setstyle $HOME/GNUstep/Library/WindowMaker/Styles/Pache.style"
+    ),
+    (
       "Save Theme",
       EXEC,
       "getstyle -p \"%a(Theme name, Name to save theme as)\""

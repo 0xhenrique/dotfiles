@@ -18,6 +18,10 @@ configs:
     "trash:///":
       row: 2
       col: 0
+    "FE6E7F996E7F4A03":
+      row: 3
+      col: 0
+      last_seen: 1777240200098589
     "2026-02-01-08-05-47-00":
       row: 3
       col: 0
