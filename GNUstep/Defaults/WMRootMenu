@@ -1,6 +1,7 @@
 (
   "Window Maker",
   (Run..., EXEC, "%A(Run, Type command:)"),
+  ("-", ""),
   (
     Applications,
     ("File Managers", (Thunar, EXEC, thunar)),
@@ -22,6 +23,7 @@
     (System, (top, EXEC, "xterm -e top")),
     ("P2P Network", (sftp, EXEC, "xterm -e sftp"))
   ),
+  ("-", ""),
   (
     Appearance,
     (
@@ -134,6 +136,11 @@
       )
     ),
     (
+      "Apply Amoled",
+      EXEC,
+      "setstyle $HOME/GNUstep/Library/WindowMaker/Styles/Amoled.style"
+    ),
+    (
       "Save Theme",
       EXEC,
       "getstyle -p \"%a(Theme name, Name to save theme as)\""
@@ -144,6 +151,7 @@
       "geticonset $HOME/GNUstep/Library/WindowMaker/IconSets/\"%a(IconSet name,Name to save icon set as)\""
     )
   ),
+  ("-", ""),
   (Workspaces, WORKSPACE_MENU),
   (
     Workspace,
@@ -154,8 +162,10 @@
     ("Save Session", SAVE_SESSION),
     ("Clear Session", CLEAR_SESSION)
   ),
+  ("-", ""),
   ("Configure Window Maker", EXEC, WPrefs),
   ("Info Panel", INFO_PANEL),
+  ("-", ""),
   ("Restart Window Maker", RESTART),
   ("Exit Window Maker", EXIT)
 )

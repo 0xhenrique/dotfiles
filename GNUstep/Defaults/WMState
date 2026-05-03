@@ -1,0 +1,140 @@
+{
+  Dock = {
+    AutoRaiseLower = No;
+    Applications = (
+      {
+        Forced = No;
+        Name = Logo.WMDock;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,0";
+        Lock = No;
+        Command = "-";
+      },
+      {
+        Forced = No;
+        Name = wmgpumon.WMGpumon;
+        DropCommand = "./wmgpumon %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,4";
+        Lock = No;
+        PasteCommand = "./wmgpumon %s";
+        Command = "./wmgpumon";
+      },
+      {
+        Forced = No;
+        Name = wmmemfree.WMMemFree;
+        DropCommand = "/home/arisu/workspace/bin/dockapps/wmmemfree/wmmemfree %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,2";
+        Lock = No;
+        PasteCommand = "/home/arisu/workspace/bin/dockapps/wmmemfree/wmmemfree %s";
+        Command = "/home/arisu/workspace/bin/dockapps/wmmemfree/wmmemfree";
+      },
+      {
+        Forced = No;
+        Name = wmgpumon.WMGpumon;
+        DropCommand = "./wmgpumon %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,3";
+        Lock = No;
+        PasteCommand = "./wmgpumon %s";
+        Command = "./wmgpumon";
+      },
+      {
+        Forced = No;
+        Name = "\\./cputnik/cputnik.\\./cputnik/cputnik";
+        DropCommand = "./cputnik/cputnik %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,1";
+        Lock = No;
+        PasteCommand = "./cputnik/cputnik %s";
+        Command = "./cputnik/cputnik";
+      }
+    );
+    Applications1080 = (
+      {
+        Forced = No;
+        Name = Logo.WMDock;
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,0";
+        Lock = No;
+        Command = "-";
+      },
+      {
+        Forced = No;
+        Name = wmgpumon.WMGpumon;
+        DropCommand = "./wmgpumon %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,4";
+        Lock = No;
+        PasteCommand = "./wmgpumon %s";
+        Command = "./wmgpumon";
+      },
+      {
+        Forced = No;
+        Name = wmmemfree.WMMemFree;
+        DropCommand = "/home/arisu/workspace/bin/dockapps/wmmemfree/wmmemfree %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,2";
+        Lock = No;
+        PasteCommand = "/home/arisu/workspace/bin/dockapps/wmmemfree/wmmemfree %s";
+        Command = "/home/arisu/workspace/bin/dockapps/wmmemfree/wmmemfree";
+      },
+      {
+        Forced = No;
+        Name = wmgpumon.WMGpumon;
+        DropCommand = "./wmgpumon %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,3";
+        Lock = No;
+        PasteCommand = "./wmgpumon %s";
+        Command = "./wmgpumon";
+      },
+      {
+        Forced = No;
+        Name = "\\./cputnik/cputnik.\\./cputnik/cputnik";
+        DropCommand = "./cputnik/cputnik %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,1";
+        Lock = No;
+        PasteCommand = "./cputnik/cputnik %s";
+        Command = "./cputnik/cputnik";
+      }
+    );
+    Lowered = Yes;
+    Position = "1856,0";
+  };
+  Clip = {
+    Forced = No;
+    Name = Logo.WMClip;
+    BuggyApplication = No;
+    AutoLaunch = No;
+    Position = "0,0";
+    Lock = No;
+    Command = "-";
+  };
+  Drawers = ();
+  Workspaces = (
+    {
+      Clip = {
+        AutoRaiseLower = No;
+        AutoCollapse = No;
+        Applications = ();
+        Collapsed = No;
+        AutoAttractIcons = No;
+        Lowered = Yes;
+      };
+      Name = "Workspace 1";
+    }
+  );
+}
