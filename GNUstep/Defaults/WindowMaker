@@ -3,6 +3,7 @@
   FTitleColor = "#000000";
   MenuDisabledColor = "#3A3A50";
   IconTitleBack = "#0D0D0D";
+  HotCornerEdge = 2;
   PixmapPath = (
     "/home/arisu/GNUstep/Library/WindowMaker/Pixmaps",
     "/home/arisu/GNUstep/Library/WindowMaker/Backgrounds",
@@ -12,8 +13,7 @@
     "/usr/share/WindowMaker/Backgrounds",
     "/usr/share/pixmaps"
   );
-  HotCornerEdge = 2;
-  FTitleBack = (solid, "#8Fd4FF");
+  FTitleBack = (solid, "#FFFFFF");
   ToggleKbdModeKey = None;
   DragMaximizedWindow = RestoreGeometry;
   ClipTitleFont = "Arial:slant=0:weight=200:width=100:pixelsize=10";
@@ -44,8 +44,8 @@
   ClipTitleColor = "#E0E0E0";
   MoveTo12to6Head = None;
   HotCornerActions = (None, None, None, None);
-  HighlightColor = "#8Fd4FF";
-  FrameFocusedBorderColor = "#8Fd4FF";
+  HighlightColor = "#FFFFFF";
+  FrameFocusedBorderColor = "#FFFFFF";
   WindowTitleFont = "UnifontExMono:slant=0:weight=100:width=100:pixelsize=14";
   RunKey = "Mod4+D";
   WindowPlaceOrigin = (0, 0);
@@ -69,5 +69,5 @@
   UTitleBack = (solid, "#050505");
   PTitleColor = "#E0E0E0";
   CloseRootMenuByLeftOrRightMouseClick = NO;
-  FrameSelectedBorderColor = "#8Fd4FF";
+  FrameSelectedBorderColor = "#FFFFFF";
 }

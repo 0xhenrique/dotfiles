@@ -1,5 +1,5 @@
 {
-  FTitleBack  = (solid, "#8Fd4FF");
+  FTitleBack  = (solid, "#FFFFFF");
   FTitleColor = "#000000";
   UTitleBack  = (solid, "#050505");
   UTitleColor = "#E0E0E0";
@@ -7,8 +7,8 @@
   PTitleColor = "#E0E0E0";
 
   FrameBorderColor         = "#1A1A1A";
-  FrameFocusedBorderColor  = "#8Fd4FF";
-  FrameSelectedBorderColor = "#8Fd4FF";
+  FrameFocusedBorderColor  = "#FFFFFF";
+  FrameSelectedBorderColor = "#FFFFFF";
 
   ResizebarBack = (solid, "#050505");
 
@@ -19,7 +19,7 @@
   MenuDisabledColor = "#3A3A50";
   MenuStyle         = normal;
 
-  HighlightColor     = "#8Fd4FF";
+  HighlightColor     = "#FFFFFF";
   HighlightTextColor = "#000000";
 
   IconBack       = (solid, "#050505");
