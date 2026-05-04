@@ -1,8 +1,9 @@
 {
-  FrameBorderColor = "#3c3836";
-  FTitleColor = "#282828";
-  MenuDisabledColor = "#665c54";
-  IconTitleBack = "#282828";
+  FrameBorderColor = "#1A1A1A";
+  FTitleColor = "#000000";
+  MenuDisabledColor = "#3A3A50";
+  IconTitleBack = "#0D0D0D";
+  HotCornerEdge = 2;
   PixmapPath = (
     "/home/arisu/GNUstep/Library/WindowMaker/Pixmaps",
     "/home/arisu/GNUstep/Library/WindowMaker/Backgrounds",
@@ -12,46 +13,46 @@
     "/usr/share/WindowMaker/Backgrounds",
     "/usr/share/pixmaps"
   );
-  HotCornerEdge = 2;
-  FTitleBack = (solid, "#fabd2f");
+  FTitleBack = (solid, "#FFFFFF");
   ToggleKbdModeKey = None;
   DragMaximizedWindow = RestoreGeometry;
-  ClipTitleFont = "Arial:slant=0:weight=200:width=100:pixelsize=10";
-  IconTitleFont = "Arial:slant=0:weight=80:width=100:pixelsize=9";
+  ClipTitleFont = "UnifontExMono:slant=0:weight=100:width=100:size=10";
+  IconTitleFont = "UnifontExMono:slant=0:weight=100:width=100:size=9";
   MenuTextBack = (solid, "#000000");
-  LargeDisplayFont = "Arial:slant=0:weight=80:width=100:pixelsize=24";
+  LargeDisplayFont = "UnifontExMono:slant=0:weight=100:width=100:size=20";
   PartialCaptureKey = "Shift+Mod4+S";
   HotCornerDelay = 250;
   CenterKey = None;
-  IconTitleColor = "#f2e5bc";
-  TitleJustify = left;
-  MenuTextColor = "#f2e5bc";
-  IconBack = (solid, "#282828");
-  MenuTitleColor = "#f2e5bc";
+  IconTitleColor = "#E0E0E0";
+  TitleJustify = center;
+  MenuTextColor = "#E0E0E0";
+  IconBack = (solid, "#050505");
+  MenuTitleColor = "#E0E0E0";
   AntialiasedText = YES;
-  MenuTitleFont = "Arial:slant=0:weight=200:width=100:pixelsize=12";
+  MenuTitleFont = "UnifontExMono:slant=0:weight=100:width=100:size=13";
   HotCorners = NO;
+  WindowTitleExtendSpace = 0;
   NewStyle = old;
   MoveTo6to12Head = None;
   DbClickFullScreen = NO;
   IconPosition = tlh;
-  MenuTextFont = "Arial:slant=0:weight=80:width=100:pixelsize=12";
+  MenuTextFont = "UnifontExMono:slant=0:weight=100:width=100:size=13";
   WorkspaceBack = (solid, black);
-  HighlightTextColor = "#282828";
-  MenuTitleBack = (solid, "#282828");
+  HighlightTextColor = "#000000";
+  MenuTitleBack = (solid, "#0D0D0D");
   EnforceIconMargin = NO;
   AutoArrangeIcons = YES;
-  ClipTitleColor = "#f2e5bc";
+  ClipTitleColor = "#E0E0E0";
   MoveTo12to6Head = None;
   HotCornerActions = (None, None, None, None);
-  HighlightColor = "#fabd2f";
-  FrameFocusedBorderColor = "#fabd2f";
-  WindowTitleFont = "UnifontExMono:slant=0:weight=100:width=100:pixelsize=14";
+  HighlightColor = "#FFFFFF";
+  FrameFocusedBorderColor = "#FFFFFF";
+  WindowTitleFont = "UnifontExMono:slant=0:weight=100:width=100:size=13";
   RunKey = "Mod4+D";
   WindowPlaceOrigin = (0, 0);
-  CClipTitleColor = "#a89984";
+  CClipTitleColor = "#3A3A50";
   MenuStyle = normal;
-  ResizebarBack = (solid, "#282828");
+  ResizebarBack = (solid, "#050505");
   IconPath = (
     "/home/arisu/GNUstep/Library/Icons",
     "/home/arisu/GNUstep/Library/WindowMaker/Pixmaps",
@@ -64,10 +65,12 @@
   MiniPreviewSize = 512;
   DisplayFont = "-*-helvetica-medium-r-normal-*-12-*-*-*-*-*-*-*";
   KbdModeLock = NO;
-  PTitleBack = (solid, "#282828");
-  UTitleColor = "#a89984";
-  UTitleBack = (solid, "#282828");
-  PTitleColor = "#a89984";
+  PTitleBack = (solid, "#050505");
+  MenuTextExtendSpace = 0;
+  UTitleColor = "#E0E0E0";
+  UTitleBack = (solid, "#050505");
+  PTitleColor = "#E0E0E0";
   CloseRootMenuByLeftOrRightMouseClick = NO;
-  FrameSelectedBorderColor = "#fabd2f";
+  MenuTitleExtendSpace = 0;
+  FrameSelectedBorderColor = "#FFFFFF";
 }

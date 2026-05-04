@@ -1,2 +1,11 @@
 {
+  emacs.Emacs = {
+    Icon = emacs.Emacs.xpm;
+  };
+  librewolf.Librewolf = {
+    Icon = librewolf.Librewolf.xpm;
+  };
+  "xfce4-terminal.Xfce4-terminal" = {
+    Icon = "xfce4-terminal.Xfce4-terminal.xpm";
+  };
 }

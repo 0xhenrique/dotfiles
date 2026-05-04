@@ -16,3 +16,12 @@
 #
 xset m 20/10 4
 
+xrandr --output HDMI-0 --mode 1920x1080 --rate 75
+setxkbmap -layout 'us,br' -option 'grp:win_space_toggle'
+deluge-web &
+xbindkeys &
+/home/arisu/workspace/bin/dockapps/wmgpumon/wmgpumon &
+/home/arisu/workspace/bin/dockapps/cputnik/cputnik &
+/home/arisu/workspace/bin/dockapps/wmclock/wmclock &
+/home/arisu/workspace/bin/dockapps/wmgtemp/wmgtemp &
+/home/arisu/workspace/bin/dockapps/wmmemfree/wmmemfree &

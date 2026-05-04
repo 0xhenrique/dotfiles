@@ -31,10 +31,10 @@
 
   WorkspaceBack = (solid, black);
 
-  WindowTitleFont  = "UnifontExMono:slant=0:weight=100:width=100:pixelsize=14";
-  MenuTitleFont    = "Arial:slant=0:weight=200:width=100:pixelsize=12";
-  MenuTextFont     = "Arial:slant=0:weight=80:width=100:pixelsize=12";
-  IconTitleFont    = "Arial:slant=0:weight=80:width=100:pixelsize=9";
-  ClipTitleFont    = "Arial:slant=0:weight=200:width=100:pixelsize=10";
-  LargeDisplayFont = "Arial:slant=0:weight=80:width=100:pixelsize=24";
+  WindowTitleFont  = "UnifontExMono:slant=0:weight=100:width=100:size=13";
+  MenuTitleFont    = "UnifontExMono:slant=0:weight=100:width=100:size=13";
+  MenuTextFont     = "UnifontExMono:slant=0:weight=100:width=100:size=13";
+  IconTitleFont    = "UnifontExMono:slant=0:weight=100:width=100:size=9";
+  ClipTitleFont    = "UnifontExMono:slant=0:weight=100:width=100:size=10";
+  LargeDisplayFont = "UnifontExMono:slant=0:weight=100:width=100:size=20";
 }

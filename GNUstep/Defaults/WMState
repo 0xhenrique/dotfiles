@@ -13,47 +13,58 @@
       },
       {
         Forced = No;
-        Name = wmgpumon.WMGpumon;
-        DropCommand = "./wmgpumon %d";
-        BuggyApplication = No;
-        AutoLaunch = No;
-        Position = "0,4";
-        Lock = No;
-        PasteCommand = "./wmgpumon %s";
-        Command = "./wmgpumon";
-      },
-      {
-        Forced = No;
         Name = wmmemfree.WMMemFree;
         DropCommand = "/home/arisu/workspace/bin/dockapps/wmmemfree/wmmemfree %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,2";
+        Position = "0,1";
         Lock = No;
         PasteCommand = "/home/arisu/workspace/bin/dockapps/wmmemfree/wmmemfree %s";
         Command = "/home/arisu/workspace/bin/dockapps/wmmemfree/wmmemfree";
       },
       {
         Forced = No;
-        Name = wmgpumon.WMGpumon;
-        DropCommand = "./wmgpumon %d";
+        Name = wmgtemp.wmgtemp;
+        DropCommand = "/home/arisu/workspace/bin/dockapps/wmgtemp/wmgtemp %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,2";
+        Lock = No;
+        PasteCommand = "/home/arisu/workspace/bin/dockapps/wmgtemp/wmgtemp %s";
+        Command = "/home/arisu/workspace/bin/dockapps/wmgtemp/wmgtemp";
+      },
+      {
+        Forced = No;
+        Name = wmclock.WMClock;
+        DropCommand = "/home/arisu/workspace/bin/dockapps/wmclock/wmclock %d";
         BuggyApplication = No;
         AutoLaunch = No;
         Position = "0,3";
         Lock = No;
-        PasteCommand = "./wmgpumon %s";
-        Command = "./wmgpumon";
+        PasteCommand = "/home/arisu/workspace/bin/dockapps/wmclock/wmclock %s";
+        Command = "/home/arisu/workspace/bin/dockapps/wmclock/wmclock";
       },
       {
         Forced = No;
-        Name = "\\./cputnik/cputnik.\\./cputnik/cputnik";
-        DropCommand = "./cputnik/cputnik %d";
+        Name = "/home/arisu/workspace/bin/dockapps/cputnik/cputnik./home/arisu/workspace/bin/dockapps/cputnik/cputnik";
+        DropCommand = "/home/arisu/workspace/bin/dockapps/cputnik/cputnik %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,1";
+        Position = "0,4";
         Lock = No;
-        PasteCommand = "./cputnik/cputnik %s";
-        Command = "./cputnik/cputnik";
+        PasteCommand = "/home/arisu/workspace/bin/dockapps/cputnik/cputnik %s";
+        Command = "/home/arisu/workspace/bin/dockapps/cputnik/cputnik";
+      },
+      {
+        Forced = No;
+        Name = wmgpumon.WMGpumon;
+        DropCommand = "/home/arisu/workspace/bin/dockapps/wmgpumon/wmgpumon %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,5";
+        Lock = No;
+        PasteCommand = "/home/arisu/workspace/bin/dockapps/wmgpumon/wmgpumon %s";
+        Command = "/home/arisu/workspace/bin/dockapps/wmgpumon/wmgpumon";
       }
     );
     Applications1080 = (
@@ -68,47 +79,58 @@
       },
       {
         Forced = No;
-        Name = wmgpumon.WMGpumon;
-        DropCommand = "./wmgpumon %d";
-        BuggyApplication = No;
-        AutoLaunch = No;
-        Position = "0,4";
-        Lock = No;
-        PasteCommand = "./wmgpumon %s";
-        Command = "./wmgpumon";
-      },
-      {
-        Forced = No;
         Name = wmmemfree.WMMemFree;
         DropCommand = "/home/arisu/workspace/bin/dockapps/wmmemfree/wmmemfree %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,2";
+        Position = "0,1";
         Lock = No;
         PasteCommand = "/home/arisu/workspace/bin/dockapps/wmmemfree/wmmemfree %s";
         Command = "/home/arisu/workspace/bin/dockapps/wmmemfree/wmmemfree";
       },
       {
         Forced = No;
-        Name = wmgpumon.WMGpumon;
-        DropCommand = "./wmgpumon %d";
+        Name = wmgtemp.wmgtemp;
+        DropCommand = "/home/arisu/workspace/bin/dockapps/wmgtemp/wmgtemp %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,2";
+        Lock = No;
+        PasteCommand = "/home/arisu/workspace/bin/dockapps/wmgtemp/wmgtemp %s";
+        Command = "/home/arisu/workspace/bin/dockapps/wmgtemp/wmgtemp";
+      },
+      {
+        Forced = No;
+        Name = wmclock.WMClock;
+        DropCommand = "/home/arisu/workspace/bin/dockapps/wmclock/wmclock %d";
         BuggyApplication = No;
         AutoLaunch = No;
         Position = "0,3";
         Lock = No;
-        PasteCommand = "./wmgpumon %s";
-        Command = "./wmgpumon";
+        PasteCommand = "/home/arisu/workspace/bin/dockapps/wmclock/wmclock %s";
+        Command = "/home/arisu/workspace/bin/dockapps/wmclock/wmclock";
       },
       {
         Forced = No;
-        Name = "\\./cputnik/cputnik.\\./cputnik/cputnik";
-        DropCommand = "./cputnik/cputnik %d";
+        Name = "/home/arisu/workspace/bin/dockapps/cputnik/cputnik./home/arisu/workspace/bin/dockapps/cputnik/cputnik";
+        DropCommand = "/home/arisu/workspace/bin/dockapps/cputnik/cputnik %d";
         BuggyApplication = No;
         AutoLaunch = No;
-        Position = "0,1";
+        Position = "0,4";
         Lock = No;
-        PasteCommand = "./cputnik/cputnik %s";
-        Command = "./cputnik/cputnik";
+        PasteCommand = "/home/arisu/workspace/bin/dockapps/cputnik/cputnik %s";
+        Command = "/home/arisu/workspace/bin/dockapps/cputnik/cputnik";
+      },
+      {
+        Forced = No;
+        Name = wmgpumon.WMGpumon;
+        DropCommand = "/home/arisu/workspace/bin/dockapps/wmgpumon/wmgpumon %d";
+        BuggyApplication = No;
+        AutoLaunch = No;
+        Position = "0,5";
+        Lock = No;
+        PasteCommand = "/home/arisu/workspace/bin/dockapps/wmgpumon/wmgpumon %s";
+        Command = "/home/arisu/workspace/bin/dockapps/wmgpumon/wmgpumon";
       }
     );
     Lowered = Yes;
@@ -129,7 +151,32 @@
       Clip = {
         AutoRaiseLower = No;
         AutoCollapse = No;
-        Applications = ();
+        Applications = (
+          {
+            Forced = No;
+            Name = "xfce4-terminal.Xfce4-terminal";
+            DropCommand = "xfce4-terminal %d";
+            BuggyApplication = No;
+            AutoLaunch = No;
+            Position = "1,0";
+            Lock = No;
+            PasteCommand = "xfce4-terminal %s";
+            Command = "xfce4-terminal";
+            Omnipresent = No;
+          },
+          {
+            Forced = No;
+            Name = emacs.Emacs;
+            DropCommand = "emacs %d";
+            BuggyApplication = No;
+            AutoLaunch = No;
+            Position = "2,0";
+            Lock = No;
+            PasteCommand = "emacs %s";
+            Command = emacs;
+            Omnipresent = No;
+          }
+        );
         Collapsed = No;
         AutoAttractIcons = No;
         Lowered = Yes;
