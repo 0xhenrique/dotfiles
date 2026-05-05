@@ -1,15 +1,29 @@
-(add-to-load-path "/home/arisu/.config/guix")
-
 (use-modules (gnu)
              (gnu packages)
              (gnu packages linux)
-             (packages)
-             ;(services)
-             ;(filesystems)
              (nongnu packages linux)
              (nongnu packages nvidia)
              (nongnu system linux-initrd)
              (nonguix transformations))
+
+(define arisu-desktop-packages
+  (list (specification->package "emacs")
+        (specification->package "flameshot")
+        (specification->package "mpv")
+        (specification->package "rhythmbox")))
+
+(define arisu-development-packages
+  (list (specification->package "git")
+        (specification->package "gimp")
+        (specification->package "postgresql")
+        (specification->package "ripgrep")
+        (specification->package "fd")
+        (specification->package "nss-certs")))
+
+(define arisu-server-packages
+  (list (specification->package "btop")
+        (specification->package "deluge")
+        (specification->package "nicotine+")))
 
 (use-service-modules cups desktop networking ssh xorg sddm samba)
 
