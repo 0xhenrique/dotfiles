@@ -11,7 +11,7 @@
              (nongnu system linux-initrd)
              (nonguix transformations))
 
-(use-service-modules cups desktop networking ssh xorg sddm)
+(use-service-modules cups desktop networking ssh xorg sddm samba)
 
 (define %arisu-os
   (operating-system
@@ -53,7 +53,39 @@
            (service cups-service-type)
            (simple-service 'load-nvidia-drm activation-service-type
                            #~(system* #$(file-append kmod "/bin/modprobe")
-                                      "nvidia-drm")))
+                                      "nvidia-drm"))
+           (service samba-service-type
+                    (samba-configuration
+                     (enable-smbd? #t)
+                     (config-file
+                      (plain-file "smb.conf" "
+[global]
+map to guest = Bad User
+logging = syslog@1
+server string = hack me
+workgroup = WORKGROUP
+socket options = TCP_NODELAY IPTOS_LOWDELAY SO_RCVBUF=131072 SO_SNDBUF=131072
+
+[hdd1]
+comment = Primary Drive
+browsable = yes
+path = /public/hdd1
+read only = no
+guest ok = yes
+guest only = yes
+create mask = 0644
+directory mask = 0755
+
+[hdd2]
+comment = Secondary Drive
+browsable = yes
+path = /public/hdd2
+read only = no
+guest ok = yes
+guest only = yes
+create mask = 0644
+directory mask = 0755
+")))))
      (modify-services %desktop-services
 		      (delete gdm-service-type)
 		      (guix-service-type config =>
@@ -77,15 +109,31 @@
 
    (file-systems (cons* (file-system
                          (mount-point "/boot/efi")
-                         (device (uuid "CE74-0C03"
-                                       'fat32))
+                         (device (uuid "CE74-0C03" 'fat32))
                          (type "vfat"))
-			(file-system
+                        (file-system
                          (mount-point "/")
-                         (device (uuid
-                                  "e92ece76-5a72-43b1-88b8-0b0b39539b5b"
-                                  'ext4))
-                         (type "ext4")) %base-file-systems))))
+                         (device (uuid "e92ece76-5a72-43b1-88b8-0b0b39539b5b" 'ext4))
+                         (type "ext4"))
+                        ;; sirius - primary storage (NTFS, NVMe)
+                        (file-system
+                         (mount-point "/public/hdd1")
+                         (device (file-system-label "Sirius"))
+                         (type "ntfs-3g")
+                         (flags '(no-atime))
+                         (needed-for-boot? #f)
+                         (skip-check-if-clean? #t)
+                         (create-mount-point? #t))
+                        ;; rigel - secondary storage (ext4, HDD)
+                        (file-system
+                         (mount-point "/public/hdd2")
+                         (device (uuid "bf91bd86-c9ea-4675-95a8-cc172afdec29" 'ext4))
+                         (type "ext4")
+                         (flags '(no-atime))
+                         (needed-for-boot? #f)
+                         (skip-check-if-clean? #t)
+                         (create-mount-point? #t))
+                        %base-file-systems))))
 
 ((nonguix-transformation-nvidia
   #:driver nvda-595
