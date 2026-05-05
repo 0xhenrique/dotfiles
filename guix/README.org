@@ -28,6 +28,63 @@ Built around EXWM (Emacs X Window Manager).
 
 Note: the first run will take a VERY LONG TIME as it builds everything from scratch.
 
+** NVIDIA Drivers (RTX 5060 Ti / Blackwell)
+
+This machine uses NVIDIA proprietary drivers via nonguix.
+
+*** Requirements in =config.scm=
+
+The nonguix transformation must use the open-source kernel module because (apparently)
+the closed-source module does not support Blackwell GPUs:
+#+BEGIN_SRC scheme
+  ((nonguix-transformation-nvidia
+    #:driver nvda-595
+    #:open-source-kernel-module? #t
+    #:configure-xorg? sddm-service-type)
+   %arisu-os)
+#+END_SRC
+
+The =nvidia-drm= kernel module must be loaded at boot so that elogind reports the seat
+as graphical (=CAN_GRAPHICAL=1=). Without this, SDDM hangs forever at startup. This is
+handled by an activation snippet in the services list:
+#+BEGIN_SRC scheme
+  (simple-service 'load-nvidia-drm activation-service-type
+                  #~(system* #$(file-append kmod "/bin/modprobe")
+                             "nvidia-drm"))
+#+END_SRC
+This requires =(gnu packages linux)= in the =use-modules= list (for =kmod=).
+
+SDDM is also configured to hide Wayland sessions since I don't use it anyway:
+#+BEGIN_SRC scheme
+  (service sddm-service-type
+           (sddm-configuration
+            (remember-last-session? #f)
+            (sessions-directory "")    ; hiding wayland sessions from the greeter
+            (xorg-configuration
+             (xorg-configuration
+              (keyboard-layout keyboard-layout)
+              (drivers '("nvidia"))))))
+#+END_SRC
+
+*** First Boot After Installation
+
+On the first boot, SDDM will probably hang (=CAN_GRAPHICAL=0=) if the activation script
+hasn't run yet (e.g. booting an older generation). In that case, manually load the
+module from TTY and restart SDDM:
+#+BEGIN_SRC shell
+  sudo modprobe nvidia-drm
+  sudo herd restart sddm
+#+END_SRC
+
+*** GPU Name Shows as Unknown
+
+For some reason the RTX 5060 Ti (PCI ID =2d04=) doesn't appear in the =pci.ids= database, so
+tools like =neofetch= and XFCE About show it as `unknown`. To check if everything is working:
+#+BEGIN_SRC shell
+  nvidia-smi
+  glxinfo | grep renderer
+#+END_SRC
+
 ** Post-Installation Setup
 
 *** PostgreSQL Initialization
@@ -104,6 +161,32 @@ Check filesystem integrity:
 #+BEGIN_SRC shell
   sudo fsck /dev/sdX
 #+END_SRC
+
+*** UUIDs in =config.scm= After Reinstallation
+
+The =config.scm= file hardcodes UUIDs for the EFI partition, root filesystem, and swap.
+They are are stable if you keep the same partitions and don't reformat. If you
+reinstall Guix or repartition, get the new UUIDs with:
+#+BEGIN_SRC shell
+  sudo blkid
+#+END_SRC
+
+Then update these three entries in =config.scm=:
+#+BEGIN_SRC scheme
+  ;; EFI partition (FAT32, short UUID format)
+  (device (uuid "XXXX-XXXX" 'fat32))
+
+  ;; Root partition (ext4)
+  (device (uuid "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx" 'ext4))
+
+  ;; Swap
+  (target (uuid "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"))
+#+END_SRC
+
+The current UUIDs for this machine are:
+- EFI: =CE74-0C03=
+- Root: =e92ece76-5a72-43b1-88b8-0b0b39539b5b=
+- Swap: =ea574626-49dd-4740-8d1d-168240f22ba4=
 
 * Contributing
 
