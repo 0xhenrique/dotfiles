@@ -8,7 +8,6 @@
 
 (define arisu-desktop-packages
   (list (specification->package "emacs")
-        (specification->package "flameshot")
         (specification->package "mpv")
         (specification->package "rhythmbox")))
 
@@ -17,8 +16,7 @@
         (specification->package "gimp")
         (specification->package "postgresql")
         (specification->package "ripgrep")
-        (specification->package "fd")
-        (specification->package "nss-certs")))
+        (specification->package "fd")))
 
 (define arisu-server-packages
   (list (specification->package "btop")
@@ -50,6 +48,11 @@
                   (group "users")
                   (home-directory "/home/arisu")
                   (supplementary-groups '("wheel" "netdev" "audio" "video")))
+                 (user-account
+                  (name "lwyz")
+                  (comment "lwyz")
+                  (group "users")
+                  (home-directory "/home/lwyz"))
                  %base-user-accounts))
 
    (services
@@ -78,7 +81,6 @@ map to guest = Bad User
 logging = syslog@1
 server string = hack me
 workgroup = WORKGROUP
-socket options = TCP_NODELAY IPTOS_LOWDELAY SO_RCVBUF=131072 SO_SNDBUF=131072
 
 [hdd1]
 comment = Primary Drive
@@ -86,7 +88,6 @@ browsable = yes
 path = /public/hdd1
 read only = no
 guest ok = yes
-guest only = yes
 create mask = 0644
 directory mask = 0755
 
@@ -96,7 +97,6 @@ browsable = yes
 path = /public/hdd2
 read only = no
 guest ok = yes
-guest only = yes
 create mask = 0644
 directory mask = 0755
 ")))))
@@ -125,20 +125,20 @@ directory mask = 0755
                          (mount-point "/boot/efi")
                          (device (uuid "CE74-0C03" 'fat32))
                          (type "vfat"))
+						
                         (file-system
                          (mount-point "/")
                          (device (uuid "e92ece76-5a72-43b1-88b8-0b0b39539b5b" 'ext4))
                          (type "ext4"))
-                        ;; sirius - primary storage (NTFS, NVMe)
+                        
                         (file-system
-                         (mount-point "/public/hdd1")
-                         (device (file-system-label "Sirius"))
-                         (type "ntfs-3g")
-                         (flags '(no-atime))
-                         (needed-for-boot? #f)
-                         (skip-check-if-clean? #t)
-                         (create-mount-point? #t))
-                        ;; rigel - secondary storage (ext4, HDD)
+						 (mount-point "/public/hdd1")
+						 (device (uuid "FE6E7F996E7F4A03" 'ntfs))
+						 (type "ntfs3")
+						 (flags '(no-atime))
+						 (needed-for-boot? #f)
+						 (create-mount-point? #t))
+                        
                         (file-system
                          (mount-point "/public/hdd2")
                          (device (uuid "bf91bd86-c9ea-4675-95a8-cc172afdec29" 'ext4))
