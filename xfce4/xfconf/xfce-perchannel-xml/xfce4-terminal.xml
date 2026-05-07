@@ -23,5 +23,5 @@
   <property name="background-mode" type="string" value="TERMINAL_BACKGROUND_TRANSPARENT"/>
   <property name="background-darkness" type="double" value="0.84999999999999998"/>
   <property name="font-allow-bold" type="bool" value="true"/>
-  <property name="font-name" type="string" value="UnifontExMono Medium 12"/>
+  <property name="font-name" type="string" value="Unifont 14"/>
 </channel>
