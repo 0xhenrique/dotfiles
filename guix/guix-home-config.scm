@@ -14,17 +14,25 @@
     (packages
       (list (specification->package "emacs")
             (specification->package "mpv")
+			(specification->package "librewolf")
+			(specification->package "neofetch")
+			(specification->package "icecat")
+			(specification->package "btop")
+			(specification->package "node")
+			(specification->package "patchelf")
+			(specification->package "file")
+			(specification->package "font-gnu-unifont")
+			(specification->package "setxkbmap")
             (specification->package "rhythmbox")
             (specification->package "git")
             (specification->package "gimp")
-            (specification->package "postgresql")
             (specification->package "ripgrep")
             (specification->package "fd")
-            (specification->package "btop")
             (specification->package "deluge")
             (specification->package "nicotine+")
             (specification->package "musescore")
-            (specification->package "font-bravura")))
+            (specification->package "font-bravura")
+            (specification->package "pulseaudio")))
     (services
       (append
         (list
