@@ -1,27 +1,9 @@
 (use-modules (gnu)
-             (gnu packages)
              (gnu packages linux)
              (nongnu packages linux)
              (nongnu packages nvidia)
              (nongnu system linux-initrd)
              (nonguix transformations))
-
-(define arisu-desktop-packages
-  (list (specification->package "emacs")
-        (specification->package "mpv")
-        (specification->package "rhythmbox")))
-
-(define arisu-development-packages
-  (list (specification->package "git")
-        (specification->package "gimp")
-        (specification->package "postgresql")
-        (specification->package "ripgrep")
-        (specification->package "fd")))
-
-(define arisu-server-packages
-  (list (specification->package "btop")
-        (specification->package "deluge")
-        (specification->package "nicotine+")))
 
 (use-service-modules cups desktop networking ssh xorg sddm samba)
 
@@ -37,10 +19,7 @@
    (initrd microcode-initrd)
    (firmware (list linux-firmware))
 
-   (packages (append arisu-desktop-packages
-                     arisu-development-packages
-                     arisu-server-packages
-                     %base-packages))
+   (packages %base-packages)
 
    (users (cons* (user-account
                   (name "arisu")

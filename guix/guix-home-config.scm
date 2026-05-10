@@ -5,11 +5,26 @@
   #:use-module (gnu home)
   #:use-module (gnu home services)
   #:use-module (gnu home services shells)
+  #:use-module (gnu packages)
   #:use-module (gnu services)
   #:use-module (gnu system shadow))
 
 (define home-config
   (home-environment
+    (packages
+      (list (specification->package "emacs")
+            (specification->package "mpv")
+            (specification->package "rhythmbox")
+            (specification->package "git")
+            (specification->package "gimp")
+            (specification->package "postgresql")
+            (specification->package "ripgrep")
+            (specification->package "fd")
+            (specification->package "btop")
+            (specification->package "deluge")
+            (specification->package "nicotine+")
+            (specification->package "musescore")
+            (specification->package "font-bravura")))
     (services
       (append
         (list
