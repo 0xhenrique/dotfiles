@@ -19,6 +19,7 @@
 			(specification->package "icecat")
 			(specification->package "btop")
 			(specification->package "node")
+			(specification->package "steam")
 			(specification->package "patchelf")
 			(specification->package "file")
 			(specification->package "font-gnu-unifont")
