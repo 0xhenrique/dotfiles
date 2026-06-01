@@ -33,7 +33,6 @@
 			(specification->package "libresprite")
 			(specification->package "blender")
             (specification->package "ripgrep")
-			(specification->package "hydra")
 			(specification->package "heroic")
             (specification->package "fd")
             (specification->package "deluge")
